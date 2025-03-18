@@ -12,4 +12,4 @@ springdoc:
     doc-expansion: none
 
 swagger-ui:
-  ip: 127.0.0.1, 0:0:0:0:0:0:0:1
+  ip: 127.0.0.1, 0:0:0:0:0:0:0:1, 218.156.30.29

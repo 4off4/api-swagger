@@ -8,6 +8,7 @@ spring:
   config:
     import:
       - classpath:/application/application-springdoc.yml
+      - classpath:/application/application-mybatis.yml
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
@@ -35,4 +36,3 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
       resolve-lazily: true
-

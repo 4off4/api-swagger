@@ -20,7 +20,7 @@ public class SecurityConfig {
     private final SwaggerBeanUtility swaggerBeanUtility;
 
     public String ip() {
-        List<String> permitIpList = swaggerBeanUtility.getPermitIpList();
+        List<String> permitIpList = swaggerBeanUtility.getIpList();
         StringBuilder ipAddress = new StringBuilder();
 
         int listSize = permitIpList.size();
@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()))
                 .authorizeHttpRequests(requests ->
                         requests.requestMatchers("/swagger-ui/**", "/v3/api-docs/**") .access(new WebExpressionAuthorizationManager(ip()))
-                                .requestMatchers("/error").permitAll()
+                                .requestMatchers( "/error", "/serverTime").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManagement ->

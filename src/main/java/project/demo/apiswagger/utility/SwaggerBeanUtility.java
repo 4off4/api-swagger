@@ -10,5 +10,5 @@ import java.util.List;
 @Component
 public class SwaggerBeanUtility {
     @Value("${swagger-ui.ip}")
-    List<String> permitIpList;
+    List<String> ipList;
 }
